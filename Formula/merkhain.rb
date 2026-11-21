@@ -5,27 +5,27 @@
 class Merkhain < Formula
   desc "Durable, private, collaborative memory for coding agents"
   homepage "https://merkhain.com"
-  version "0.0.3"
+  version "0.0.4"
 
   on_macos do
     on_arm do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.3/merkhain_0.0.3_darwin_arm64.tar.gz"
-      sha256 "b8539f9e14f5932ab4e146dee9a60257b7f1728024768c8d98f9a8e1f159e2dd"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.4/merkhain_0.0.4_darwin_arm64.tar.gz"
+      sha256 "ac9196b8181ced1bf63c6a214571d0946594940bea31395defec40101f221f99"
     end
     on_intel do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.3/merkhain_0.0.3_darwin_amd64.tar.gz"
-      sha256 "53665e71945955e107d319bb3c37c4089f438c46a5f706adce1ff250c1eb4041"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.4/merkhain_0.0.4_darwin_amd64.tar.gz"
+      sha256 "99ef963e45025dcf8717bb531b0302ea953b77d0bd79d3ba95b77da73192be0f"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.3/merkhain_0.0.3_linux_arm64.tar.gz"
-      sha256 "8d8e621b5760fe0ed5e68f23033f15e4e1f831c119e8b471d1f6b324e039278f"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.4/merkhain_0.0.4_linux_arm64.tar.gz"
+      sha256 "1f5a5edd42d805ee2bd55db494271ae6a4ffbc025492bae72ca5004b68618e86"
     end
     on_intel do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.3/merkhain_0.0.3_linux_amd64.tar.gz"
-      sha256 "7006467ebeeb49219f7385110d5215e68473945fd479a057691929b8f9c4afce"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.4/merkhain_0.0.4_linux_amd64.tar.gz"
+      sha256 "bc1e86f78703f2d84df97be60710645568f20b543b8fa2d152bb169823f87c08"
     end
   end
 
