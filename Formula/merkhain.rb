@@ -5,27 +5,27 @@
 class Merkhain < Formula
   desc "Durable, private, collaborative memory for coding agents"
   homepage "https://merkhain.com"
-  version "0.0.6"
+  version "0.0.7"
 
   on_macos do
     on_arm do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.6/merkhain_0.0.6_darwin_arm64.tar.gz"
-      sha256 "70c48af0d3f129173b3a61b4c0256025540bedc6daf1c8f073b6f0ff1aafac33"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.7/merkhain_0.0.7_darwin_arm64.tar.gz"
+      sha256 "120d0b23615e97f2143a7fc23b4729d7379c81f489ea4eca7b657bf2be0531d9"
     end
     on_intel do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.6/merkhain_0.0.6_darwin_amd64.tar.gz"
-      sha256 "10b493c1e1acc6018a5f71f12befd76a3529eb73bf4a608255f53a3ef9c46519"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.7/merkhain_0.0.7_darwin_amd64.tar.gz"
+      sha256 "57e74100684fba6950ecbec21adddcaa35b61b239b77bad9e38f6f728de12e92"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.6/merkhain_0.0.6_linux_arm64.tar.gz"
-      sha256 "9a61f8c6695155f3ddd6538c430c1ba09165ed74338908790209645de866c98b"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.7/merkhain_0.0.7_linux_arm64.tar.gz"
+      sha256 "3d25a91eb07654ed73367016bcc85d126c56f8d2adee703da7a15b6742e9c61d"
     end
     on_intel do
-      url "https://github.com/merkhain/releases/releases/download/v0.0.6/merkhain_0.0.6_linux_amd64.tar.gz"
-      sha256 "1c5f74d309a0495260d8500fc090a5f7f37637be932ce06238a7f07e8f1ff1bd"
+      url "https://github.com/merkhain/releases/releases/download/v0.0.7/merkhain_0.0.7_linux_amd64.tar.gz"
+      sha256 "20caf3cf09d4cff1bf53f68fa89fbf4166504c535b7868ae52cded13eb14bad4"
     end
   end
 
@@ -38,8 +38,10 @@ class Merkhain < Formula
     end
   end
 
+  # The launcher runs serve local and activates the next `brew upgrade`
+  # itself (merkhain supervise; docs/guide/upgrade.md).
   service do
-    run [opt_bin/"merkhain", "serve", "local"]
+    run [opt_bin/"merkhain", "supervise", "local", "--install-path", opt_bin/"merkhain"]
     keep_alive successful_exit: false
     environment_variables PATH: std_service_path_env
     log_path var/"log/merkhain-local.log"
